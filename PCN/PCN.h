@@ -38,8 +38,8 @@ cv::Point RotatePoint(int x, int y, float centerX, float centerY, float angle)
 void DrawLine(cv::Mat img, std::vector<cv::Point> pointList)
 {
     int thick = 2;
-    CvScalar cyan = CV_RGB(0, 255, 255);
-    CvScalar blue = CV_RGB(0, 0, 255);
+    cv::Scalar cyan = CV_RGB(0, 255, 255);
+    cv::Scalar blue = CV_RGB(0, 0, 255);
     cv::line(img, pointList[0], pointList[1], cyan, thick);
     cv::line(img, pointList[1], pointList[2], cyan, thick);
     cv::line(img, pointList[2], pointList[3], cyan, thick);
