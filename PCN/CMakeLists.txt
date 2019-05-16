@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.7)
 project(PCN)
 
-# OpenCV
-find_package(OpenCV REQUIRED)
+set(CMAKE_CXX_STANDARD 17)
+
+find_package(OpenCV)
+find_package(Caffe)
 
 # blas
 if(APPLE)
@@ -14,4 +16,4 @@ FILE(GLOB_RECURSE HEADERS PCN.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${Caffe_LIBRARIES})
