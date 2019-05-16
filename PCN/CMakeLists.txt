@@ -11,7 +11,7 @@ if(APPLE)
     include_directories(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Headers)
 endif(APPLE)
 
-FILE(GLOB_RECURSE SOURCES crop.cpp fddb.cpp PCN.cpp video.cpp)
+FILE(GLOB_RECURSE SOURCES PCN.cpp video.cpp)
 FILE(GLOB_RECURSE HEADERS PCN.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
