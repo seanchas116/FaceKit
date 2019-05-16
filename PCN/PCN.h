@@ -25,7 +25,7 @@ struct Window
     {}
 };
 
-cv::Point RotatePoint(int x, int y, float centerX, float centerY, float angle)
+inline cv::Point RotatePoint(int x, int y, float centerX, float centerY, float angle)
 {
     x -= centerX;
     y -= centerY;
@@ -35,7 +35,7 @@ cv::Point RotatePoint(int x, int y, float centerX, float centerY, float angle)
     return cv::Point(rx, ry);
 }
 
-void DrawLine(cv::Mat img, std::vector<cv::Point> pointList)
+inline void DrawLine(cv::Mat img, std::vector<cv::Point> pointList)
 {
     int thick = 2;
     cv::Scalar cyan = CV_RGB(0, 255, 255);
@@ -46,7 +46,7 @@ void DrawLine(cv::Mat img, std::vector<cv::Point> pointList)
     cv::line(img, pointList[3], pointList[0], blue, thick);
 }
 
-void DrawFace(cv::Mat img, Window face)
+inline void DrawFace(cv::Mat img, Window face)
 {
     int x1 = face.x;
     int y1 = face.y;
@@ -62,7 +62,7 @@ void DrawFace(cv::Mat img, Window face)
     DrawLine(img, pointList);
 }
 
-cv::Mat CropFace(cv::Mat img, Window face, int cropSize)
+inline cv::Mat CropFace(cv::Mat img, Window face, int cropSize)
 {
     int x1 = face.x;
     int y1 = face.y;
